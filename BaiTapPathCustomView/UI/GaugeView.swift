@@ -2,8 +2,6 @@
 import UIKit
 class GaugeView: UIView {
     private let shapeLayer = CAShapeLayer()
-    private var didSetupLayer = false
-
     var progress: CGFloat = 0.0 {
         didSet {
             shapeLayer.strokeEnd = progress
