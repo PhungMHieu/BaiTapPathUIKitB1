@@ -18,9 +18,12 @@ class GaugeView: UIView {
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        setUpLayer()
     }
     override func draw(_ rect: CGRect) {
+        setUpLayerBelow()
+        setUpLayer()
+    }
+    private func setUpLayerBelow(){
         let center = CGPoint(x: self.bounds.midX, y: self.bounds.midY)
         let arcPath = UIBezierPath()
         arcPath.addArc(withCenter: center,
@@ -46,16 +49,16 @@ class GaugeView: UIView {
         shapeLayer.fillColor   = UIColor.clear.cgColor
         shapeLayer.lineWidth   = 20
         shapeLayer.lineCap     = .round
-        shapeLayer.strokeEnd   = 1.0
+        shapeLayer.strokeEnd   = 0.0
         layer.addSublayer(shapeLayer)
     }
     func animateGauge(to value: CGFloat) {
-            let animation = CABasicAnimation(keyPath: "strokeEnd")
-            animation.toValue = value
-            animation.duration = 1.0
-            animation.fillMode = .forwards
-            animation.isRemovedOnCompletion = false
-            shapeLayer.add(animation, forKey: "gaugeAnimation")
-            self.progress = value
+        let animation = CABasicAnimation(keyPath: "strokeEnd")
+        animation.toValue = value
+        animation.duration = 1.0
+        animation.fillMode = .forwards
+        animation.isRemovedOnCompletion = false
+        shapeLayer.add(animation, forKey: "gaugeAnimation")
+        self.progress = value
     }
 }
