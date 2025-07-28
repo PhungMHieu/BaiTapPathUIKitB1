@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GaugeVC" customModule="BaiTapPathCustomView" customModuleProvider="target">
+            <connections>
+                <outlet property="gaugeView" destination="Rki-my-u9U" id="0je-KC-QxN"/>
+                <outlet property="percentageLabel" destination="3ki-XW-Qbp" id="I4M-JM-LDX"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vju-p0-AKR">
+                    <rect key="frame" x="16" y="695" width="361" height="56"/>
+                    <color key="backgroundColor" systemColor="systemCyanColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="56" id="JpI-pn-Lmi"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Choose a random number">
+                        <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="16"/>
+                        <color key="baseForegroundColor" systemColor="secondarySystemGroupedBackgroundColor"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="btnRandom:" destination="-1" eventType="touchUpInside" id="2ME-OA-lhd"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" 0/100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ki-XW-Qbp">
+                    <rect key="frame" x="146" y="404.66666666666669" width="101.33333333333331" height="43"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                    <color key="textColor" systemColor="systemMintColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rki-my-u9U" customClass="GaugeView" customModule="BaiTapPathCustomView" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="118" width="393" height="577"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemGray6Color"/>
+            <constraints>
+                <constraint firstItem="Vju-p0-AKR" firstAttribute="top" secondItem="Rki-my-u9U" secondAttribute="bottom" id="EA9-7P-DjF"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Vju-p0-AKR" secondAttribute="bottom" constant="33" id="Euj-D0-Kic"/>
+                <constraint firstItem="3ki-XW-Qbp" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="Kru-lU-FSA"/>
+                <constraint firstItem="Vju-p0-AKR" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="T6p-aj-I5D"/>
+                <constraint firstItem="Rki-my-u9U" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="cJD-wn-VI2"/>
+                <constraint firstItem="Rki-my-u9U" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="kj2-O7-TvP"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Rki-my-u9U" secondAttribute="trailing" id="nhK-Xq-Clm"/>
+                <constraint firstItem="3ki-XW-Qbp" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="pUB-IQ-Dzg"/>
+                <constraint firstItem="Vju-p0-AKR" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="xlz-1E-VeO"/>
+            </constraints>
+            <point key="canvasLocation" x="63" y="16"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="secondarySystemGroupedBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemCyanColor">
+            <color red="0.1960784314" green="0.67843137249999996" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemMintColor">
+            <color red="0.0" green="0.78039215689999997" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
